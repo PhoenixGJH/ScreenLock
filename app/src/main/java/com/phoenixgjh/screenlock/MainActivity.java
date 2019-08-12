@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Intent;
-import android.os.Process;
 import android.os.Bundle;
+import android.os.Process;
 import android.text.TextUtils;
 
 import java.util.Locale;
@@ -20,15 +20,11 @@ public class MainActivity extends Activity {
 
     /**
      * 判断当前的语言环境
-     *
-     * @return
      */
     private boolean isChina() {
         String str = Locale.getDefault().getCountry();
         if (!TextUtils.isEmpty(str)) {
-            if (str.equalsIgnoreCase("cn")) {
-                return true;
-            }
+            return str.equalsIgnoreCase("cn");
         }
         return false;
     }
